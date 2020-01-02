@@ -79,9 +79,9 @@ Installation
 if your project is  already in git, you can include this repository as a 
 `git submodule <https://www.atlassian.com/git/tutorials/git-submodule>`_. This makes it easier to update this theme. For this you need to run(from base-directory where manage.py is located):
 
-```bash
-$ git submodule add https://github.com/adityhere/django-trix.git trix
-```
+
+    $ git submodule add https://github.com/adityhere/django-trix.git trix
+
 alternatively you can manually download the .zip file and install as app in django
 Add to *INSTALLED_APPS*::
 
