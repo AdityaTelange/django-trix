@@ -76,10 +76,13 @@ CSS in head, JS at end of body, because you are a responsible developer.
 Installation
 ------------
 
-It's on `PyPI <https://pypi.python.org/pypi/django-trix>`_::
+if your project is  already in git, you can include this repository as a 
+`git submodule <https://www.atlassian.com/git/tutorials/git-submodule>`_. This makes it easier to update this theme. For this you need to run(from base-directory where manage.py is located):
 
-    pip install django-trix
-
+```bash
+$ git submodule add https://github.com/adityhere/django-trix.git trix
+```
+alternatively you can manually download the .zip file and install as app in django
 Add to *INSTALLED_APPS*::
 
     INSTALLED_APPS = (
@@ -92,13 +95,6 @@ Add route to *urls.py*::
 
     urlpatterns = [
         ...
-        url(r'^trixorwhateveryouwant/', include('trix.urls')),
+        url(r'^trix/', include('trix.urls')),
         ...
     ]
-
-
-TODO
-----
-
-* A bunch of stuff!
-* Attachment uploads
