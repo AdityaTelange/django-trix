@@ -4,7 +4,7 @@ with open("README.rst", "r") as fh:
     long_description = fh.read()
 
 setuptools.setup(
-    name="django_trix",
+    name="django_trix-fork",
     version='0.3.1',
     packages=["trix"],
     include_package_data=True,
