@@ -1,17 +1,17 @@
-from setuptools import setup
+import setuptools
 
-long_description = open('README.rst').read()
+with open("README.rst", "r") as fh:
+    long_description = fh.read()
 
-setup(
-    name="django-trix",
+setuptools.setup(
+    name="django_trix",
     version='0.3.1',
     packages=["trix"],
     include_package_data=True,
-    description="Trix rich text editor widget for Django",
-    url="https://github.com/istrategylabs/django-trix",
-    author="Jeremy Carbaugh",
-    author_email="jeremy@isl.co",
-    license='BSD',
+    description="Trix rich text editor widget for Django (Fork of https://github.com/tortillagroup/django-trix)",
+    url="https://github.com/adityatelange/django-trix",
+    author="Jeremy Carbaugh, Aditya Telange",
+    license='MIT',
     long_description=long_description,
     platforms=["any"],
     classifiers=[
@@ -21,7 +21,6 @@ setup(
         "Intended Audience :: Developers",
         "Operating System :: OS Independent",
         "Programming Language :: Python",
-        "Programming Language :: Python :: 2.7",
         "Programming Language :: Python :: 3.5",
         "Programming Language :: Python :: 3.6",
         "Topic :: Software Development :: Libraries :: Python Modules",
