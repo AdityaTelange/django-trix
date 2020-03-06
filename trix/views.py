@@ -13,7 +13,6 @@ class AttachmentView(View):
 
         if is_valid_image_extension(uploaded_attachment):
             if form.is_valid():
-                print(self.request.FILES['file'])
                 photo = form.save()
                 data = {'url': photo.file.url}
             else:

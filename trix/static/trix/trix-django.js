@@ -31,12 +31,16 @@
         })
 
         xhr.addEventListener("load", function(event) {
-            if (xhr.status == 204) {
+            if (xhr.status == 200) {
+                resp = JSON.parse(xhr.response)
+                media_url = resp.url
                 var attributes = {
-                    url: url,
-                    href: url + "?content-disposition=attachment"
+                    url: media_url ,
+                    href: media_url + "?content-disposition=attachment"
                 }
-            successCallback(attributes)
+                successCallback(attributes)
+            } else {
+                alert(`Error ${xhr.status}: ${xhr.statusText}`);
             }
         })
 
