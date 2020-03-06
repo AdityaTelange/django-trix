@@ -2,9 +2,42 @@ django-trix
 ===========
 
 [Trix rich text editor](http://trix-editor.org) widget for Django, using
-Trix 1.2.2.
+[Trix 1.2.2](https://github.com/basecamp/trix/releases/tag/1.2.2).
 
-Using django-trix
+Installation
+------------
+
+1. From [PyPI](https://pypi.org/project/django-trix-fork/):
+
+    `pip install django-trix-fork`
+
+2. Install `trix` as app in django Add to *INSTALLED\_APPS*:
+
+    ```
+   INSTALLED_APPS = (
+        ...
+        'trix',
+        ...
+    )
+   ```
+
+3. Add route to *urls.py*:
+
+    ```
+    urlpatterns = [
+        ...
+        url(r'^trix/', include('trix.urls')),
+        ...
+    ]
+   ```
+4. Set-Up trix-django tables:
+    ```shell script
+    python manage.py makemigrations trix
+    python manage.py migrate
+   ```
+ Done
+
+How to use django-trix
 -----------------
 
 django-trix includes a form widget, a model field, and a model admin
@@ -66,35 +99,7 @@ include the associated media:
 
 CSS in head, JS at end of body, because you are a responsible developer.
 
-Installation
+
+What Works
 ------------
-
-1. From [PyPI](https://pypi.org/project/django-trix-fork/):
-
-    `pip install django-trix-fork`
-
-2. Install `trix` as app in django Add to *INSTALLED\_APPS*:
-
-    ```
-   INSTALLED_APPS = (
-        ...
-        'trix',
-        ...
-    )
-   ```
-
-3. Add route to *urls.py*:
-
-    ```
-    urlpatterns = [
-        ...
-        url(r'^trix/', include('trix.urls')),
-        ...
-    ]
-   ```
-4. Set-Up trix-django tables:
-    ```shell script
-    python manage.py makemigrations trix
-    python manage.py migrate
-   ```
- Done
+Basically Everything :) from Rich Text formatting to Uploading Attachments  !
