@@ -13,6 +13,7 @@ setuptools.setup(
     author="Jeremy Carbaugh, Aditya Telange",
     license='MIT',
     long_description=long_description,
+    long_description_content_type="text/markdown",
     platforms=["any"],
     classifiers=[
         "Development Status :: 4 - Beta",
