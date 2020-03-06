@@ -1,23 +1,21 @@
-===========
 django-trix
 ===========
 
-`Trix rich text editor <http://trix-editor.org>`_ widget for Django, using Trix 1.2.2.
-    
+[Trix rich text editor](http://trix-editor.org) widget for Django, using
+Trix 1.2.2.
 
 Using django-trix
 -----------------
 
-django-trix includes a form widget, a model field, and a model admin mixin that
-enables the rich text editor. You can use any of these methods, but you do not
-need to use all.
+django-trix includes a form widget, a model field, and a model admin
+mixin that enables the rich text editor. You can use any of these
+methods, but you do not need to use all.
 
-Model
-~~~~~
+### Model
 
-To enable the editor in the Django admin (or any form) via the model field, use
-the Trix model field *TrixField* which inherits from
-django.db.models.TextField::
+To enable the editor in the Django admin (or any form) via the model
+field, use the Trix model field *TrixField* which inherits from
+django.db.models.TextField:
 
     from django.db import models
     from trix.fields import TrixField
@@ -25,12 +23,10 @@ django.db.models.TextField::
     class Post(models.Model):
         content = TrixField('Content')
 
-
-Admin
-~~~~~
+### Admin
 
 To enable the editor in the Django admin, inherit from TrixAdmin and set
-the *trix_fields* attribute to a list of the fields that use an editor::
+the *trix\_fields* attribute to a list of the fields that use an editor:
 
     from myawesomeblogapp.models import Post
     from trix.admin import TrixAdmin
@@ -39,12 +35,10 @@ the *trix_fields* attribute to a list of the fields that use an editor::
     class PostAdmin(TrixAdmin, admin.ModelAdmin):
         trix_fields = ('content',)
 
+### Forms and Templates
 
-Forms and Templates
-~~~~~~~~~~~~~~~~~~~
-
-The editor can be used in forms and templates by adding the *TrixEditor* widget
-to a form field::
+The editor can be used in forms and templates by adding the *TrixEditor*
+widget to a form field:
 
     from django import forms
     from trix.widgets import TrixEditor
@@ -53,7 +47,7 @@ to a form field::
         content = forms.CharField(widget=TrixEditor)
 
 In the template, just use the form as you normally would, but be sure to
-include the associated media::
+include the associated media:
 
     <!doctype html>
     <html lang="en">
@@ -72,29 +66,35 @@ include the associated media::
 
 CSS in head, JS at end of body, because you are a responsible developer.
 
-
 Installation
 ------------
 
-if your project is  already in git, you can include this repository as a 
-`git submodule <https://www.atlassian.com/git/tutorials/git-submodule>`_. This makes it easier to update this theme. For this you need to run(from base-directory where manage.py is located):
+1. From [PyPI](https://pypi.org/project/django-trix-fork/):
 
+    `pip install django-trix-fork`
 
-    $ git submodule add https://github.com/adityhere/django-trix.git trix
+2. Install `trix` as app in django Add to *INSTALLED\_APPS*:
 
-alternatively you can manually download the .zip file and install as app in django
-Add to *INSTALLED_APPS*::
-
-    INSTALLED_APPS = (
+    ```
+   INSTALLED_APPS = (
         ...
         'trix',
         ...
     )
+   ```
 
-Add route to *urls.py*::
+3. Add route to *urls.py*:
 
+    ```
     urlpatterns = [
         ...
         url(r'^trix/', include('trix.urls')),
         ...
     ]
+   ```
+4. Set-Up trix-django tables:
+    ```shell script
+    python manage.py makemigrations trix
+    python manage.py migrate
+   ```
+ Done
