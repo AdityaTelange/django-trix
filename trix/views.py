@@ -14,11 +14,10 @@ class AttachmentView(View):
         if is_valid_image_extension(uploaded_attachment):
             if form.is_valid():
                 photo = form.save()
-                data = {'url': photo.file.url}
+                data = {'valid': 'true', 'url': photo.file.url}
             else:
-                data = {}
+                data = {'valid': 'false', 'msg': 'not Valid'}
             return JsonResponse(data)
         else:
-            print("not valid")
-            data = {}
+            data = {'valid': 'false', 'msg': 'file type not Valid'}
             return JsonResponse(data)

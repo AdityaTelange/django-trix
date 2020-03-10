@@ -5,7 +5,6 @@
         }
     })
 
-
     function uploadFileAttachment(attachment) {
         uploadFile(attachment.file, setProgress, setAttributes)
 
@@ -33,12 +32,16 @@
         xhr.addEventListener("load", function(event) {
             if (xhr.status == 200) {
                 resp = JSON.parse(xhr.response)
-                media_url = resp.url
-                var attributes = {
-                    url: media_url ,
-                    href: media_url + "?content-disposition=attachment"
+                if (resp.valid === 'true') {
+                    media_url = resp.url
+                    var attributes = {
+                        url: media_url ,
+                        href: media_url + "?content-disposition=attachment"
+                    }
+                    successCallback(attributes)
+                } else {
+                    alert(`File Upload Failed: ${resp.msg}`);
                 }
-                successCallback(attributes)
             } else {
                 alert(`Error ${xhr.status}: ${xhr.statusText}`);
             }
@@ -50,12 +53,12 @@
         var date = new Date()
         var day = date.toISOString().slice(0,10)
         var name = date.getTime() + "-" + file.name
-        return [ "tmp", day, name ].join("/")
+        return [ day, name ].join("_")
     }
 
     function createFormData(key, file) {
         var data = new FormData()
-        data.append("key", key)
+        data.append("title", key)
         data.append("Content-Type", file.type)
         data.append("file", file)
         return data
