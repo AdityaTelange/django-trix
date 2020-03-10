@@ -5,11 +5,11 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="django_trix-fork",
-    version='0.3.1.1',
+    version='0.3.1.2',
     packages=["trix"],
     include_package_data=True,
     description="Trix rich text editor widget for Django (Fork of https://github.com/tortillagroup/django-trix)",
-    url="https://github.com/adityatelange/django-trix",
+    url="https://github.com/adityatelange/django-trix-fork",
     author="Jeremy Carbaugh, Aditya Telange",
     license='MIT',
     long_description=long_description,
