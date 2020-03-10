@@ -56,3 +56,9 @@ DATABASES = {
 
 MEDIA_PATH = '/media/'
 STATIC_URL = '/static/'
+
+# valid file extentions for attachment
+TRIX_EXTENSIONS = ['.jpg', '.png']
+
+# folder where attachments will be saved
+TRIX_URI = 'trix'
