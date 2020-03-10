@@ -30,7 +30,19 @@ Installation
         ...
     ]
    ```
-4. Set-Up trix-django tables:
+
+4. Add *django-trix* variables to your `app/settings.py`:
+    ```
+    ...
+    # valid file extentions for attachment 
+    TRIX_EXTENSIONS = ['.jpg', '.png'] 
+
+    # folder where attachments will be saved
+    TRIX_URI = 'trix' 
+    ...
+    ```
+
+5. Set-Up trix-django tables:
     ```shell script
     python manage.py makemigrations trix
     python manage.py migrate
