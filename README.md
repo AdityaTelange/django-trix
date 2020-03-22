@@ -2,7 +2,7 @@ django-trix
 ===========
 
 [Trix rich text editor](http://trix-editor.org) widget for Django, using
-[Trix 1.2.2](https://github.com/basecamp/trix/releases/tag/1.2.2).
+[Trix 1.2.3](https://github.com/basecamp/trix/releases/tag/1.2.3).
 
 Installation
 ------------
