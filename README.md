@@ -1,8 +1,11 @@
-django-trix
+django-trix-fork
 ===========
 
 [Trix rich text editor](http://trix-editor.org) widget for Django, using
 [Trix 1.2.3](https://github.com/basecamp/trix/releases/tag/1.2.3).
+
+
+<kbd><img src="https://i.ibb.co/742Y2Yn/django-trix-fork-thumbnail.png" alt=""></img></kbd>
 
 Installation
 ------------
@@ -110,7 +113,6 @@ include the associated media:
     </html>
 
 CSS in head, JS at end of body, because you are a responsible developer.
-
 
 What Works
 ------------
